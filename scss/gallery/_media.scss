@@ -1,0 +1,35 @@
+$tab-height: 46px;
+
+.media-view {
+  width: 70%;
+  background-color: var(--galleryBg);
+  float: right;
+  padding-left: 10px;
+  margin-top: $nav-bar-height;
+  max-height: calc(100vh - 50px);
+  overflow: hidden;
+
+  & .gallery {
+    overflow: scroll;
+    height: calc(100vh - #{$tab-height} - #{$nav-bar-height});
+
+    & > .item-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px 0px;
+      & > .item {
+        padding: 5px 5px 5px 5px;
+      }
+    }
+  }
+  .no-media-message {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 5rem;
+    margin-left: 0.5rem;
+  }
+
+  .bp4-tab-panel {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,210 @@
+// ChatView Background selector
+
+.bg-option-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.background-preview {
+  width: calc(50% - 10px);
+  height: auto;
+  border-radius: 5pt;
+  background-image: var(--chatViewBgImgPath);
+  background-color: var(--chatViewBg);
+  background-size: cover;
+}
+
+.background-options {
+  display: flex;
+  width: calc(50% - 10px);
+  height: 170px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+
+  .bp4-button {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+.background-default-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 170px;
+  justify-content: space-between;
+  align-content: space-between;
+  margin-top: 13px;
+}
+
+.custom-image,
+.custom-color {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #d6d6d6 !important;
+  color: #545454;
+}
+
+.background-options > div,
+.background-default-images > div {
+  flex-wrap: wrap;
+  width: 75px;
+  height: 75px;
+  border-radius: 3pt;
+  background-color: darkcyan;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.profile-image-username {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  &.center {
+    align-items: center;
+    flex-direction: column;
+  }
+  .profile-image-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img,
+    span {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      user-select: none;
+      pointer-events: none;
+      margin-bottom: 20px;
+    }
+    span {
+      line-height: 100px;
+      font-size: 64px;
+      color: white;
+      text-align: center;
+    }
+  }
+  .profile-displayname-addr {
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    justify-content: center;
+
+    .displayname {
+      font-size: large;
+      font-weight: 200;
+    }
+
+    .addr {
+      color: #969696;
+      margin-top: 5px;
+      text-overflow: ellipsis;
+      overflow-wrap: break-word;
+      overflow-wrap: anywhere;
+    }
+  }
+}
+
+.theme-meta {
+  background-color: #80808082;
+  padding: 6px;
+  margin: 3px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+
+  p {
+    margin-bottom: 0px;
+  }
+
+  p.name:before {
+    content: var(--name);
+  }
+  p.description:before {
+    content: var(--description);
+  }
+}
+
+.SettingsButton,
+.SettingsIconButton {
+  position: relative;
+  height: 40px;
+  width: calc(100% + 40px);
+  left: -20px;
+
+  &:hover {
+    background-color: var(--chatListItemBgHover);
+    cursor: pointer;
+  }
+
+  button {
+    margin-left: 20px;
+    padding: 0;
+    flex-grow: 1;
+
+    background-color: unset;
+    border: none;
+
+    text-align: start;
+    line-height: 40px;
+    color: var(--globalText);
+  }
+}
+
+.SettingsIconButton {
+  display: flex;
+  padding: 0px 20px;
+
+  .Icon {
+    width: 24px;
+    height: 100%;
+    -webkit-mask-size: 80%;
+    background-color: var(--settingsIconColor);
+  }
+}
+
+.SettingsSelector {
+  display: flex;
+  position: relative;
+  height: 40px;
+  width: calc(100% + 40px);
+  left: -20px;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: var(--chatListItemBgHover);
+    cursor: pointer;
+  }
+
+  button {
+    max-width: 50%;
+    margin-left: 20px;
+    padding: 0;
+
+    background-color: unset;
+    border: none;
+
+    text-align: left;
+    line-height: normal;
+    color: var(--globalText);
+  }
+
+  .CurrentValue {
+    padding-right: 20px;
+    line-height: 40px;
+    color: var(--colorPrimary);
+    font-weight: lighter;
+    max-width: 50%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.SettingsDialog {
+  .bp4-card:first-child {
+    padding-top: 0px;
+  }
+}

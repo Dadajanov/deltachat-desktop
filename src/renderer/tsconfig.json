@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "../../tsc-dist/renderer",
+    "rootDir": ".",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es6",
+    "jsx": "react",
+    "allowJs": false,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "strictNullChecks": true,
+    "strict": true
+  },
+  "references": [
+    {
+      "path": "../shared/tsconfig.json"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+import React from 'react'
+import classNames from 'classnames'
+import Timestamp from '../conversations/Timestamp'
+import { isImage, isVideo } from '../attachment/Attachment'
+import { i18nContext } from '../../contexts'
+import { msgStatus } from '../../../shared/shared-types'
+
+export default class MessageMetaData extends React.Component<{
+  padlock: boolean
+  username?: string
+  fileMime: string | null
+  direction?: 'incoming' | 'outgoing'
+  status: msgStatus
+  hasText: boolean
+  timestamp: number
+  hasLocation?: boolean
+  onClickError?: () => void
+}> {
+  render() {
+    const {
+      padlock,
+      username,
+      fileMime,
+      direction,
+      status,
+      hasText,
+      timestamp,
+      hasLocation,
+      onClickError,
+    } = this.props
+
+    const withImageNoCaption = Boolean(
+      !hasText && (isImage(fileMime) || isVideo(fileMime))
+    )
+
+    return (
+      <i18nContext.Consumer>
+        {tx => (
+          <div
+            className={classNames('metadata', {
+              'with-image-no-caption': withImageNoCaption,
+            })}
+          >
+            {username !== undefined ? (
+              <div className='username'>{username}</div>
+            ) : null}
+            {padlock === true ? (
+              <div
+                aria-label={tx('a11y_encryption_padlock')}
+                className={'padlock-icon'}
+              />
+            ) : null}
+            {hasLocation ? <span className={'location-icon'} /> : null}
+            <Timestamp
+              timestamp={timestamp}
+              extended
+              direction={direction}
+              module='date'
+            />
+            <span className='spacer' />
+            {direction === 'outgoing' ? (
+              <div
+                className={classNames('status-icon', status)}
+                aria-label={tx(`a11y_delivery_status_${status}`)}
+                onClick={status === 'error' ? onClickError : undefined}
+              />
+            ) : null}
+          </div>
+        )}
+      </i18nContext.Consumer>
+    )
+  }
+}

@@ -1,0 +1,40 @@
+.icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+
+  &.videocamera {
+    background-image: url('../images/videocamera.svg');
+    background-repeat: no-repeat;
+    margin: 5px;
+    background-size: 38px;
+  }
+}
+
+.remove-icon {
+  margin-top: calc((64px - 20px) / 2);
+  margin-right: 10px;
+  .bp4-icon > svg {
+    width: 20px;
+    height: 20px;
+    fill: grey;
+  }
+}
+
+.remove-icon:hover {
+  .bp4-icon {
+    & > svg {
+      fill: #bf0000;
+    }
+  }
+}
+
+img.verified-icon {
+  width: 1em;
+  height: 1em;
+  // about 1 white space's width
+  margin-inline-start: 0.3em;
+  vertical-align: middle;
+  // move it up a little bit so it looks more centered
+  transform: translate(0px, -0.07em);
+}

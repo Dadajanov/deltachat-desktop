@@ -1,0 +1,169 @@
+.composer {
+  background-color: var(--composerBg);
+  border-left: 1px solid rgba(16, 22, 26, 0.1);
+  &.composer--disabled-message-input {
+    --composerHeight: 40px;
+    text-align: center;
+    padding: calc((var(--composerHeight) - 16px) / 2);
+    height: var(--composerHeight);
+    color: #999;
+    overflow: hidden;
+
+    @media only screen and (max-width: 830px) {
+      padding: 0px 3px;
+    }
+  }
+
+  &.contact-request {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0px;
+
+    & > .contact-request-button {
+      background-color: var(--chatListItemSelectedBg);
+      border-radius: 10px;
+      padding: 10px 15px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      user-select: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .upper-bar {
+    & > .attachment-quote-section {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 0;
+
+      .quote {
+        // this is just overwrites for the quote styles defined in _message.scss
+        margin: 4px;
+      }
+
+      .message-attachment-media {
+        flex-grow: 1;
+        margin: 4px;
+        border-radius: 0px;
+        cursor: unset;
+        img {
+          cursor: unset;
+        }
+      }
+
+      .message-attachment-generic {
+        margin: 4px;
+      }
+
+      .clear-quote-icon {
+        margin-right: 5px;
+        min-width: 32px;
+        &::before {
+          color: var(--chat-list-item-summary-text);
+        }
+      }
+    }
+  }
+
+  .lower-bar {
+    display: flex;
+    align-items: flex-end;
+
+    .attachment-button,
+    .emoji-button {
+      .bp4-button.bp4-minimal {
+        width: 40px;
+        height: 40px;
+
+        &:hover {
+          background: none;
+          cursor: pointer;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .emoji-button {
+      height: 40px;
+      padding: 0px 3px;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+
+      span {
+        display: block;
+        width: 25px;
+        height: 25px;
+        margin-top: calc((40px - 25px) / 2);
+        background-image: url(../images/emoji.png);
+        background-size: contain;
+      }
+    }
+
+    .send-button-wrapper {
+      width: 32px;
+      height: 32px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      margin-right: 5px;
+      background-color: var(--composerSendButton);
+      border-radius: 180px;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      button {
+        height: 24px;
+        width: 24px;
+        margin: 4px;
+        border: none;
+        background-image: url(../images/send-button.png);
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: 3px 1px;
+        background-size: contain;
+        vertical-align: middle;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    textarea.message-input-area {
+      flex-grow: 1;
+      resize: unset;
+      padding: 0px;
+      border: 0;
+      height: auto;
+      line-height: 24px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      overflow-y: hidden;
+      background-color: var(--composerBg);
+      color: var(--composerText);
+
+      &::placeholder {
+        color: var(--composerPlaceholderText);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.scroll {
+        overflow-y: scroll;
+      }
+    }
+  }
+}

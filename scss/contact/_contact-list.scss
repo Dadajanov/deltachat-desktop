@@ -1,0 +1,149 @@
+.contact-list-item {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  &:hover {
+    background-color: var(--contactListItemBgHover);
+  }
+
+  &:focus {
+    background-color: var(--contactListItemBgFocus);
+  }
+
+  .chat-list & {
+    padding-left: 0px;
+  }
+
+  &[disabled] {
+    input:hover,
+    .checkmark:hover {
+      cursor: 'default';
+    }
+  }
+}
+
+div.create-chat-contact-list-wrapper {
+  margin: -20px;
+  background-color: var(--bp4DialogBgPrimary);
+}
+
+.delta-checkbox {
+  margin-right: 10px;
+  input {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-top: calc((64px - 20px) / 2);
+    border: solid;
+    border-radius: 3px;
+    border-width: 2px;
+    border-color: grey;
+    cursor: pointer;
+    &:checked {
+      border-color: var(--loginInputFocusColor);
+      background-color: var(--loginInputFocusColor);
+    }
+    &:disabled {
+      border-color: grey;
+      background-color: grey;
+      cursor: default;
+    }
+  }
+  .checkmark {
+    display: block;
+    position: relative;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    span {
+      display: block;
+      position: relative;
+      background-color: white;
+    }
+    span:nth-child(1) {
+      width: 9px;
+      height: 3px;
+      right: -1px;
+      bottom: -7px;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    span:nth-child(2) {
+      height: 3px;
+      width: 14px;
+      top: 1px;
+      right: -6px;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.disabled > .delta-checkbox > input {
+  border-color: var(--delta-dialog-seperator-text);
+  background-color: var(--delta-dialog-seperator-text);
+}
+
+.AddMemberChipsWrapper {
+  max-height: 33%;
+  overflow: scroll;
+  border-bottom: solid 1px #d3d3d3;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .AddMemberChips {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: -5px;
+    margin-right: -5px;
+    --local-height: 34px;
+
+    .AddMemberChip {
+      display: flex;
+      width: auto;
+      max-width: fit-content;
+      margin: 5px;
+
+      .DisplayName {
+        line-height: 68px;
+        margin-left: -33px;
+        padding-left: 39px;
+        padding-right: 12px;
+        height: var(--local-height);
+        background-color: var(--addMemberChipBackgroundColor);
+        line-height: var(--local-height);
+        border-radius: 48px;
+        max-width: 130px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .Avatar {
+        height: var(--local-height);
+        .avatar {
+          --local-avatar-size: var(--local-height);
+          --local-avatar-font-size: 22px;
+          --local-avatar-vertical-margin: -2px;
+          width: var(--local-height);
+          height: var(--local-height);
+        }
+        .content {
+          margin: 0px !important;
+        }
+      }
+    }
+
+    .group-member-search {
+      display: flex;
+      line-height: var(--local-height);
+      height: var(--local-height);
+      width: 90px;
+      margin: 5px;
+    }
+  }
+}
