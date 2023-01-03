@@ -97,7 +97,7 @@ async function showGroupedNotification(
     runtime.showNotification({
       title: appName,
       body: tx('notify_new_messages'),
-      icon: '../../../images/TuronTelecomIcon.svg',
+      icon: '../../../images/turonchat.svg',
       chatId: 0,
       messageId: 0,
       accountId,

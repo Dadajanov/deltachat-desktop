@@ -28,11 +28,13 @@ $color-map-overlay-bg: var(--mapOverlayBg);
 div.context-menu {
   width: 200px;
   background-color: var(--mapMessageBg);
+
   label {
     display: block;
     font-size: 13px;
     padding: 2px;
   }
+
   input {
     height: 24px;
     font-size: 16px;
@@ -42,6 +44,7 @@ div.context-menu {
     border-color: #666;
     border-style: solid;
   }
+
   div.send-button-wrapper {
     width: 32px;
     height: 32px;
@@ -49,9 +52,10 @@ div.context-menu {
     margin-top: 14px;
     margin-bottom: 4px;
     margin-right: 5px;
-    background-color: #415e6b;
+    background-color: #30408d;
     border-radius: 180px;
     cursor: pointer;
+
     button {
       height: 24px;
       width: 24px;
@@ -93,6 +97,7 @@ div.context-menu {
   button.collapse-control {
     padding-left: 0;
   }
+
   button.toggle-path {
     padding-left: 0;
   }
@@ -112,6 +117,7 @@ div.context-menu {
   #menu {
     margin-top: 5pt;
     clear: both;
+
     div {
       width: 50%;
       float: left;
@@ -128,6 +134,7 @@ div.context-menu {
 
   .contactFilter {
     padding-top: 10px;
+
     label {
       padding-left: 5px;
     }

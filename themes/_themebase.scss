@@ -3,7 +3,9 @@ $hover-contrast-change: 2%;
 @function changeContrast($color, $factor) {
   @if lightness($color) < 50 {
     @return lighten($color, $factor);
-  } @else {
+  }
+
+  @else {
     @return darken($color, $factor);
   }
 }
@@ -17,7 +19,7 @@ $hover-contrast-change: 2%;
   --ovalButtonText: #{$ovalButtonText};
   --ovalButtonTextHover: #{desaturate(invert($ovalButtonText), 1)};
   /* NavBar */
-  --navBarBackground: #{$bgNavBar};
+  --navBarBackground: #{30408d};
   --navBarText: #{$textNavBar};
   --navBarSearchPlaceholder: #{changeContrast($textNavBar, 27%)};
   --navBarGroupSubtitle: #{changeContrast($textNavBar, 27%)};
@@ -25,7 +27,8 @@ $hover-contrast-change: 2%;
   --sideBarBackground: #{$bgPrimary};
   --sideBarAccountBackground: #{$sideBarAccountBg};
   --sideBarAccountIconBackground: #{$sideBarAccountIconBg};
-  --sideBarAccountIconHoverBackground: #{changeContrast($sideBarAccountIconBg, $hover-contrast-change)};;
+  --sideBarAccountIconHoverBackground: #{changeContrast($sideBarAccountIconBg, $hover-contrast-change)};
+  ;
   --sideBarAccountEmailText: #{$sideBarAccountEmailText};
   /* ChatView */
   --chatViewBg: #{$bgChatView};
@@ -35,172 +38,180 @@ $hover-contrast-change: 2%;
   --composerText: #{$textPrimary};
   --composerPlaceholderText: #{rgba($textPrimary, 0.5)};
   --composerBtnColor: #{rgba($textPrimary, 0.9)};
-  --composerSendButton: #415e6b;
+  --composerSendButton: #30408d;
   --emojiSelectorSelectionColor: #{$accentColor};
   /* Chat List */
   --chatListItemSelectedBg: #{$chatListItemSelectedBg};
   --chatListItemSelectedBgHover: #{changeContrast(
-      $chatListItemSelectedBg,
-      1% + $hover-contrast-change
-    )};
-  --chatListItemSelectedText: #{$bgPrimary};
-  --chatListItemBgHover: #{changeContrast($bgPrimary, $hover-contrast-change)};
-  --chatListItemBgPinned: #{changeContrast($bgPrimary, 7%)};
-  --chatListItemBgPinnedHover: #{changeContrast(
-      $bgPrimary,
-      7% + $hover-contrast-change
-    )};
-  --chatListItemDeaddropBg: #{changeContrast($bgPrimary, 15%)};
-  --chatListItemDeaddropBgHover: #{changeContrast(
-      $bgPrimary,
-      15% + $hover-contrast-change
-    )};
-  --chat-list-item-summary-text: #{changeContrast($textPrimary, 33%)};
-  --chat-list-item-archived-label: #{changeContrast($textPrimary, 20%)};
-  --chat-list-item-archived-label-border: #{changeContrast($textPrimary, 33%)};
-  /* Chat List - search */
-  --cli-search-result-divider: #{changeContrast($bgSecondary, 5%)};
-  --cli-search-result-divider-border: #{changeContrast($bgSecondary, 10%)};
-  --cli-search-result-divider-border-width: 2px;
-  /* ContactList / AccountList */
-  --contactListItemBgHover: #{changeContrast($bgPrimary, $hover-contrast-change)};
-  --contactListItemBgFocus: #{changeContrast($bgPrimary, 12%)};
-  /* Keybindings Cheatsheet */
-  --keybindingHintsBoxBackground: #{$keybindingHintsBoxBackground};
-  --keybindingKeyBackground: #{$keybindingKeyBackground};
-  --keybindingKeyBorder: #{$keybindingKeyBorder};
-  --keybindingKeyFontColor: black;
-  --keybindingKeyShadow: #{$keybindingKeyShadow};
-  --keybindingActionBackground: #{$keybindingActionBackground};
-  /* Floating Action Button */
-  --floatingActionButtonBg: #{$floatingActionButtonBg};
-  /* Message Bubble */
-  --messageText: #{$textPrimary};
-  --messageTextLink: #{$textPrimary};
-  --messageQuotedText: #{changeContrast($textPrimary, 45%)};
-  /* same as message text */
-  --setupMessageText: #ed824e;
-  --infoMessageBubbleBg: #0000008c;
-  --infoMessageBubbleText: white;
-  --messageIncomingBg: #{$bgMessageBubbleIncoming};
-  --messageIncomingDate: #{$textPrimary};
-  --messageOutgoingBg: #{$bgMessageBubbleOutgoing};
-  --messageOutgoingStatusColor: #4caf50; // Message Bubble - Buttons
-  /* Message Bubble - Metadata */
-  --messageStatusIcon: #4caf50;
-  --messageStatusIconSending: #62656a;
-  --messagePadlockOutgoing: #4caf50;
-  --messagePadlockIncoming: #a4a6a9;
-  --messageMetadataDate: #62656a;
-  --messageMetadataIncoming: rgba(#ffffff, 0.7);
-  --messageAuthor: #ffffff;
-  --messageReplyBtn: whitesmoke;
-  --messageReplyBtnHover: white;
-  --messageReplyBtnBg: rgba(0, 0, 0, 0.23);
-  --messageReplyBtnBgHover: rgba(0, 0, 0, 0.33);
-  /* Message Bubble - Attachments */
-  --messageAttachmentIconExtentionColor: #070c14;
-  /* Manual value: This will not get generated in the future */
-  --messageAttachmentIconBg: transparent;
-  /* Manual value: This will not get generated in the future */
-  --messageAttachmentFileInfo: #{$textPrimary};
-  /* Login Screen */
-  --loginInputFocusColor: #{$colorPrimary};
-  --loginButtonText: #{$colorPrimary};
-  --deltaChatPrimaryFg: #{$textPrimary}; // todo rename this var
-  --deltaChatPrimaryFgLight: #{$textSecondary}; // todo rename this var
-  /* Context Menu */
-  --contextMenuBg: #{$bgPrimary};
-  --contextMenuBorder: #{changeContrast($bgSecondary, 10%)};
-  --contextMenuText: #{$textSecondary};
-  --contextMenuSelected: #{$bgSecondary};
-  --contextMenuSelectedBg: #a4a6a9;
-  --bp4DialogHeaderBg: #{$bgPrimary};
-  // bp4 overwrites
-  --bp4DialogHeaderIcon: #666666;
-  --bp4DialogBgSecondary: #{$bgSecondary};
-  --bp4DialogBgPrimary: #{$bgPrimary};
-  --bp4Heading: #{$textPrimary};
-  --bp4ButtonText: #{$textPrimary};
-  --bp4ButtonBg: #{$bgPrimary};
-  --bp4ButtonGradientTop: rgba(255, 255, 255, 0.8);
-  --bp4ButtonGradientBottom: rgba(255, 255, 255, 0);
-  --bp4ButtonHoverBg: #ebf1f5;
-  --bp4InputText: #{$textPrimary};
-  --bp4InputBg: #{$bgPrimary};
-  --bp4InputPlaceholder: lightgray;
-  --bp4-input-focused: #{$colorPrimary};
-  --bp4MenuText: #{$textPrimary};
-  --bp4MenuBg: #{$bgPrimary};
-  --bp4Switch: #7a8084;
-  --bp4SwitchShadow: unset;
-  --bp4SwitchChecked: #acd4e8;
-  --bp4SwitchShadowChecked: unset;
-  --bp4SwitchKnob: #f5f5f5;
-  --bp4SwitchKnobShadow: 0px 2px 0 0px #d2cfcfad;
-  --bp4SwitchKnobChecked: #42a5f5;
-  --bp4SwitchKnobShadowChecked: 0px 1px 0 0px #c9d4d2d1;
-  --bp4SpinnerTrack: #acd4e8;
-  --bp4SpinnerHead: #42a5f5;
-  --bp4SelectorTop: rgba(255, 255, 255, 0.8);
-  --bp4SelectorBottom: rgba(255, 255, 255, 0);
-  --bp4-control-indicator-color: #{rgba($textPrimary, 0.08)};
-  --outlineProperties: 1px solid transparent;
-  --outlineColor: #{$outlineColor};
-  --delta-dialog-seperator: #{$bgSecondary};
-  --delta-dialog-seperator-text: #{changeContrast($bgSecondary, 24%)};
-  /* EmojiMart overwrites */
-  --emojiMartText: #{$textPrimary};
-  --emojiMartBorder: #{$outlineColor};
-  --emojiMartSearchBorder: lightgrey;
-  --emojiMartBg: #{$bgPrimary};
-  --emojiMartOutsideRadius: 5px;
-  --emojiMartCategoryIcons: #{mix($textPrimary, $bgSecondary, 40%)};
-  --emojiMartInputBg: #{$bgSecondary};
-  --emojiMartInputText: #{$textPrimary};
-  --emojiMartInputPlaceholder: #{mix($textPrimary, $bgSecondary, 30%)};
-  --emojiMartSelect: #{mix($bgSecondary, invert($bgSecondary), 0.2)};
-  /* Misc */
-  --galleryBg: #{$bgPrimary};
-  --avatarLabelColor: #ffffff; // Manual value: This will not get generated in the future
-  --brokenMediaText: #070c14;
-  --brokenMediaBg: #ffffff;
-  --unreadCountBg: #{$accentColor};
-  --unreadCountLabel: #ffffff; // Manual value: This will not get generated in the future;
-  --contactEmailColor: #{$textSecondary};
-  --errorColor: #f44336;
-  --globalLinkColor: #2090ea; // Manual value: This will not get generated in the future
-  --globalBackground: #{$bgPrimary};
-  --globalText: #{$textPrimary};
-  --mapOverlayBg: #{$bgPrimary};
-  --mapMessageBg: #{$bgPrimary};
-  --videoPlayBtnIcon: #{$accentColor};
-  --videoPlayBtnBg: #ffffff; // Manual value: This will not get generated in the future
-  --videoPlayBtnBorder: #eaeaea;
-  --videoPlayBtnBgHover: #eeeeee;
-  --fullScreenMediaButtons: #8b8e91;
-  --messageHightlightColor: rgba(66, 165, 245, 0.8);
-  --addMemberChipBackgroundColor: #{$bgSecondary};
-  --searchInputBackgroundColor: #52768700;
-  --galleryWebxdcItem: #{changeContrast($bgPrimary, 10%)};
-  --recently-seen-indicator-color: #34c759;
+ $chatListItemSelectedBg,
+  1%+$hover-contrast-change)
+}
 
-  @if lightness($bgPrimary) < 50 {
-    // dark theme
-    --scrollbarThumb: #{rgba(white, $scrollbarTransparency)};
-    --scrollbarThumbHover: #{rgba(white, $scrollbarTransparency + 0.14)};
+;
+--chatListItemSelectedText: #{$bgPrimary};
+--chatListItemBgHover: #{changeContrast($bgPrimary, $hover-contrast-change)};
+--chatListItemBgPinned: #{changeContrast($bgPrimary, 7%)};
+--chatListItemBgPinnedHover: #{changeContrast(
+ $bgPrimary,
+7%+$hover-contrast-change)
+}
 
-    --messageReplyBtnBg: rgba(255, 255, 255, 0.13);
-    --messageReplyBtnBgHover: rgba(255, 255, 255, 0.23);
+;
+--chatListItemDeaddropBg: #{changeContrast($bgPrimary, 15%)};
+--chatListItemDeaddropBgHover: #{changeContrast(
+ $bgPrimary,
+15%+$hover-contrast-change)
+}
 
-    --settingsIconColor: #666666;
-  } @else {
-    // light theme
-    --scrollbarThumb: #{rgba(grey, $scrollbarTransparency)};
-    --scrollbarThumbHover: #{rgba(grey, $scrollbarTransparency + 0.14)};
+;
+--chat-list-item-summary-text: #{changeContrast($textPrimary, 33%)};
+--chat-list-item-archived-label: #{changeContrast($textPrimary, 20%)};
+--chat-list-item-archived-label-border: #{changeContrast($textPrimary, 33%)};
+/* Chat List - search */
+--cli-search-result-divider: #{changeContrast($bgSecondary, 5%)};
+--cli-search-result-divider-border: #{changeContrast($bgSecondary, 10%)};
+--cli-search-result-divider-border-width: 2px;
+/* ContactList / AccountList */
+--contactListItemBgHover: #{changeContrast($bgPrimary, $hover-contrast-change)};
+--contactListItemBgFocus: #{changeContrast($bgPrimary, 12%)};
+/* Keybindings Cheatsheet */
+--keybindingHintsBoxBackground: #{$keybindingHintsBoxBackground};
+--keybindingKeyBackground: #{$keybindingKeyBackground};
+--keybindingKeyBorder: #{$keybindingKeyBorder};
+--keybindingKeyFontColor: black;
+--keybindingKeyShadow: #{$keybindingKeyShadow};
+--keybindingActionBackground: #{$keybindingActionBackground};
+/* Floating Action Button */
+--floatingActionButtonBg: #{$floatingActionButtonBg};
+/* Message Bubble */
+--messageText: #{$textPrimary};
+--messageTextLink: #{$textPrimary};
+--messageQuotedText: #{changeContrast($textPrimary, 45%)};
+/* same as message text */
+--setupMessageText: #ed824e;
+--infoMessageBubbleBg: #0000008c;
+--infoMessageBubbleText: white;
+--messageIncomingBg: #{$bgMessageBubbleIncoming};
+--messageIncomingDate: #{$textPrimary};
+--messageOutgoingBg: #{$bgMessageBubbleOutgoing};
+--messageOutgoingStatusColor: #4caf50; // Message Bubble - Buttons
+/* Message Bubble - Metadata */
+--messageStatusIcon: #4caf50;
+--messageStatusIconSending: #62656a;
+--messagePadlockOutgoing: #4caf50;
+--messagePadlockIncoming: #a4a6a9;
+--messageMetadataDate: #62656a;
+--messageMetadataIncoming: rgba(#ffffff, 0.7);
+--messageAuthor: #ffffff;
+--messageReplyBtn: whitesmoke;
+--messageReplyBtnHover: white;
+--messageReplyBtnBg: rgba(0, 0, 0, 0.23);
+--messageReplyBtnBgHover: rgba(0, 0, 0, 0.33);
+/* Message Bubble - Attachments */
+--messageAttachmentIconExtentionColor: #070c14;
+/* Manual value: This will not get generated in the future */
+--messageAttachmentIconBg: transparent;
+/* Manual value: This will not get generated in the future */
+--messageAttachmentFileInfo: #{$textPrimary};
+/* Login Screen */
+--loginInputFocusColor: #{$colorPrimary};
+--loginButtonText: #{$colorPrimary};
+--deltaChatPrimaryFg: #{$textPrimary}; // todo rename this var
+--deltaChatPrimaryFgLight: #{$textSecondary}; // todo rename this var
+/* Context Menu */
+--contextMenuBg: #{$bgPrimary};
+--contextMenuBorder: #{changeContrast($bgSecondary, 10%)};
+--contextMenuText: #{$textSecondary};
+--contextMenuSelected: #{$bgSecondary};
+--contextMenuSelectedBg: #a4a6a9;
+--bp4DialogHeaderBg: #{$bgPrimary};
+// bp4 overwrites
+--bp4DialogHeaderIcon: #666666;
+--bp4DialogBgSecondary: #{$bgSecondary};
+--bp4DialogBgPrimary: #{$bgPrimary};
+--bp4Heading: #{$textPrimary};
+--bp4ButtonText: #{$textPrimary};
+--bp4ButtonBg: #{$bgPrimary};
+--bp4ButtonGradientTop: rgba(255, 255, 255, 0.8);
+--bp4ButtonGradientBottom: rgba(255, 255, 255, 0);
+--bp4ButtonHoverBg: #ebf1f5;
+--bp4InputText: #{$textPrimary};
+--bp4InputBg: #{$bgPrimary};
+--bp4InputPlaceholder: lightgray;
+--bp4-input-focused: #{$colorPrimary};
+--bp4MenuText: #{$textPrimary};
+--bp4MenuBg: #{$bgPrimary};
+--bp4Switch: #7a8084;
+--bp4SwitchShadow: unset;
+--bp4SwitchChecked: #acd4e8;
+--bp4SwitchShadowChecked: unset;
+--bp4SwitchKnob: #f5f5f5;
+--bp4SwitchKnobShadow: 0px 2px 0 0px #d2cfcfad;
+--bp4SwitchKnobChecked: #42a5f5;
+--bp4SwitchKnobShadowChecked: 0px 1px 0 0px #c9d4d2d1;
+--bp4SpinnerTrack: #acd4e8;
+--bp4SpinnerHead: #42a5f5;
+--bp4SelectorTop: rgba(255, 255, 255, 0.8);
+--bp4SelectorBottom: rgba(255, 255, 255, 0);
+--bp4-control-indicator-color: #{rgba($textPrimary, 0.08)};
+--outlineProperties: 1px solid transparent;
+--outlineColor: #{$outlineColor};
+--delta-dialog-seperator: #{$bgSecondary};
+--delta-dialog-seperator-text: #{changeContrast($bgSecondary, 24%)};
+/* EmojiMart overwrites */
+--emojiMartText: #{$textPrimary};
+--emojiMartBorder: #{$outlineColor};
+--emojiMartSearchBorder: lightgrey;
+--emojiMartBg: #{$bgPrimary};
+--emojiMartOutsideRadius: 5px;
+--emojiMartCategoryIcons: #{mix($textPrimary, $bgSecondary, 40%)};
+--emojiMartInputBg: #{$bgSecondary};
+--emojiMartInputText: #{$textPrimary};
+--emojiMartInputPlaceholder: #{mix($textPrimary, $bgSecondary, 30%)};
+--emojiMartSelect: #{mix($bgSecondary, invert($bgSecondary), 0.2)};
+/* Misc */
+--galleryBg: #{$bgPrimary};
+--avatarLabelColor: #ffffff; // Manual value: This will not get generated in the future
+--brokenMediaText: #070c14;
+--brokenMediaBg: #ffffff;
+--unreadCountBg: #{$accentColor};
+--unreadCountLabel: #ffffff; // Manual value: This will not get generated in the future;
+--contactEmailColor: #{$textSecondary};
+--errorColor: #f44336;
+--globalLinkColor: #2090ea; // Manual value: This will not get generated in the future
+--globalBackground: #{$bgPrimary};
+--globalText: #{$textPrimary};
+--mapOverlayBg: #{$bgPrimary};
+--mapMessageBg: #{$bgPrimary};
+--videoPlayBtnIcon: #{$accentColor};
+--videoPlayBtnBg: #ffffff; // Manual value: This will not get generated in the future
+--videoPlayBtnBorder: #eaeaea;
+--videoPlayBtnBgHover: #eeeeee;
+--fullScreenMediaButtons: #8b8e91;
+--messageHightlightColor: rgba(66, 165, 245, 0.8);
+--addMemberChipBackgroundColor: #{$bgSecondary};
+--searchInputBackgroundColor: #52768700;
+--galleryWebxdcItem: #{changeContrast($bgPrimary, 10%)};
+--recently-seen-indicator-color: #34c759;
 
-    --settingsIconColor: #666666;
-    --jumpDownButtonBackgroundColor: white;
-    --jumpDownButtonIconColor: #808080;
-  }
+@if lightness($bgPrimary) < 50 {
+  // dark theme
+  --scrollbarThumb: #{rgba(white, $scrollbarTransparency)};
+  --scrollbarThumbHover: #{rgba(white, $scrollbarTransparency + 0.14)};
+
+  --messageReplyBtnBg: rgba(255, 255, 255, 0.13);
+  --messageReplyBtnBgHover: rgba(255, 255, 255, 0.23);
+
+  --settingsIconColor: #666666;
+}
+
+@else {
+  // light theme
+  --scrollbarThumb: #{rgba(grey, $scrollbarTransparency)};
+  --scrollbarThumbHover: #{rgba(grey, $scrollbarTransparency + 0.14)};
+
+  --settingsIconColor: #666666;
+  --jumpDownButtonBackgroundColor: white;
+  --jumpDownButtonIconColor: #808080;
+}
 }

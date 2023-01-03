@@ -27,7 +27,7 @@ $keybindingActionBackground: rgba(0, 0, 0, 0.05);
 $keybindingKeyBackground: lightgray;
 $keybindingKeyBorder: gray;
 $keybindingKeyShadow: rgba(0, 0, 0, 0.35);
-$ovalButtonBg: #415e6b;
+$ovalButtonBg: #30408d;
 $ovalButtonText: #fff;
 $sideBarAccountBg: #f5f5f5;
 $sideBarAccountEmailText: #01010199;
@@ -100,9 +100,10 @@ $scrollbarTransparency: 0.5;
 }
 
 .navbar-wrapper {
-  .bp4-icon > svg:not([fill]) {
+  .bp4-icon>svg:not([fill]) {
     fill: var(--globalText);
   }
+
   .bp4-align-left {
     border-right: solid 1px $borderColor;
     border-bottom: solid 1px $borderColor;
@@ -113,6 +114,7 @@ $scrollbarTransparency: 0.5;
       background: unset;
       border-bottom: 3px solid transparent;
       padding-top: 10px;
+
       &.bp4-active {
         border-bottom-color: black;
       }
@@ -127,13 +129,13 @@ $scrollbarTransparency: 0.5;
 }
 
 .chat-list,
-.chat-list > div,
-.bp4-navbar > :nth-child(1) {
+.chat-list>div,
+.bp4-navbar> :nth-child(1) {
   width: var(--chat-list-width);
 }
 
 .message-list-and-composer,
-.bp4-navbar > :nth-child(2) {
+.bp4-navbar> :nth-child(2) {
   width: calc(100% - var(--chat-list-width));
 }
 
@@ -161,6 +163,7 @@ $scrollbarTransparency: 0.5;
 .bp4-dialog-footer {
   border-radius: 0px;
 }
+
 .message .msg-container {
   border-radius: 0px;
   padding: 0px;
@@ -209,6 +212,7 @@ $scrollbarTransparency: 0.5;
 
     .download-btn {
       background-color: rgb(160, 160, 160);
+
       &:hover {
         background-color: rgb(160, 160, 160);
       }
@@ -233,7 +237,7 @@ $scrollbarTransparency: 0.5;
     }
   }
 
-  .bp4-icon > svg {
+  .bp4-icon>svg {
     fill: rgb(160, 160, 160);
   }
 }
@@ -274,7 +278,7 @@ $scrollbarTransparency: 0.5;
   width: 100%;
 }
 
-.message-attachment-media > .attachment-content {
+.message-attachment-media>.attachment-content {
   object-fit: unset;
   object-position: unset;
 }
@@ -288,29 +292,33 @@ $scrollbarTransparency: 0.5;
   margin-bottom: -7px;
   font-weight: unset;
 }
-.message.outgoing .metadata > .status-icon.read,
-.message.outgoing .metadata > .status-icon.delivered,
-.message.outgoing .metadata > .padlock-icon,
-.metadata.with-image-no-caption > .padlock-icon {
+
+.message.outgoing .metadata>.status-icon.read,
+.message.outgoing .metadata>.status-icon.delivered,
+.message.outgoing .metadata>.padlock-icon,
+.metadata.with-image-no-caption>.padlock-icon {
   background-color: var(--messagePadlockIncoming);
 }
 
-.message.outgoing .metadata > .date,
-.metadata.with-image-no-caption > .date {
+.message.outgoing .metadata>.date,
+.metadata.with-image-no-caption>.date {
   color: var(--messageMetadataIncoming);
 }
-.metadata.with-image-no-caption > .padlock-icon {
+
+.metadata.with-image-no-caption>.padlock-icon {
   -webkit-mask: url(../images/padlock.svg) no-repeat center;
   -webkit-mask-size: 125%;
   background-color: var(--messagePadlockIncoming);
 }
 
-.message > .author-avatar {
+.message>.author-avatar {
   display: none;
 }
-.message .msg-container .msg-body > .text {
+
+.message .msg-container .msg-body>.text {
   margin-right: 0px;
 }
+
 .message.forwarded .forwarded-indicator {
   font-weight: 100;
   color: var(--messagePadlockIncoming);
@@ -364,22 +372,23 @@ div.group-image-wrapper div.group-image-edit-button {
   top: -4px;
 }
 
-.contact-list-item#addmember > .contact > .avatar > .content,
-.contact-list-item#action-go-to-login > .contact > .avatar > .content,
-.contact-list-item#newgroup > .contact > .avatar > .content,
-.contact-list-item#newverifiedgroup > .contact > .avatar > .content {
+.contact-list-item#addmember>.contact>.avatar>.content,
+.contact-list-item#action-go-to-login>.contact>.avatar>.content,
+.contact-list-item#newgroup>.contact>.avatar>.content,
+.contact-list-item#newverifiedgroup>.contact>.avatar>.content {
   color: white;
 }
 
 .chat-list .search-result-divider {
   background: transparent;
   border-bottom: unset;
+
   &:not(:first-child) {
     border-top: 1px solid #ececec;
   }
 }
 
-.bp4-navbar > :first-child {
+.bp4-navbar> :first-child {
   border-bottom-color: hsla(216, 13.9%, 14.1%, 0.4);
   box-shadow: hsl(214.3, 6.1%, 45.1%) 0 0 2px;
 }
@@ -387,6 +396,7 @@ div.group-image-wrapper div.group-image-edit-button {
 ::-webkit-scrollbar-thumb {
   background-color: unset;
   border-right: 3px solid;
+
   &:hover {
     background-color: unset;
   }
@@ -400,7 +410,7 @@ div.group-image-wrapper div.group-image-edit-button {
   width: 3px;
 }
 
-.bp4-navbar-group > .clear-button:before {
+.bp4-navbar-group>.clear-button:before {
   color: var(--textNavBar) !important;
 }
 
@@ -408,13 +418,13 @@ div.group-image-wrapper div.group-image-edit-button {
   --messageMetadataIncoming: hsl(0, 0%, 50%);
 }
 
-.chat-list-item > .content > .chat-list-item-message,
-.pseudo-chat-list-item > .content > .chat-list-item-message {
+.chat-list-item>.content>.chat-list-item-message,
+.pseudo-chat-list-item>.content>.chat-list-item-message {
   display: none;
 }
 
-.chat-list-item > .content > .header > div > .timestamp,
-.pseudo-chat-list-item > .content > .header > div > .timestamp {
+.chat-list-item>.content>.header>div>.timestamp,
+.pseudo-chat-list-item>.content>.header>div>.timestamp {
   display: none;
 }
 
@@ -453,13 +463,13 @@ div.group-image-wrapper div.group-image-edit-button {
 */
 
 .chat-list,
-.bp4-navbar > :first-child {
+.bp4-navbar> :first-child {
   background-color: hsl(218.6, 13%, 21.2%);
   color: hsl(216, 5.4%, 63.9%);
 }
 
-.chat-list-item > .content > .header > .name,
-.pseudo-chat-list-item > .content > .header > .name {
+.chat-list-item>.content>.header>.name,
+.pseudo-chat-list-item>.content>.header>.name {
   font-size: 0.9rem;
   color: hsl(216, 5.4%, 63.9%);
 }
@@ -477,7 +487,8 @@ div.group-image-wrapper div.group-image-edit-button {
 
 .message-list-and-composer__message-list ul li {
   margin-bottom: 1rem;
-  margin-left: 18px; /* magic number */
+  margin-left: 18px;
+  /* magic number */
 }
 
 .navbar-wrapper .bp4-navbar-heading {
@@ -500,7 +511,7 @@ div.group-image-wrapper div.group-image-edit-button {
         float: none;
       }
 
-      & > .text {
+      &>.text {
         margin-right: 0px;
         order: 2;
         position: static;
@@ -522,7 +533,7 @@ div.group-image-wrapper div.group-image-edit-button {
   &.incoming {
     /* When avatar is set */
 
-    & > :nth-child(2) .author-wrapper {
+    &> :nth-child(2) .author-wrapper {
       display: none;
     }
 
@@ -636,7 +647,7 @@ div.group-image-wrapper div.group-image-edit-button {
 }
 
 .bp4-menu-item:hover,
-.bp4-submenu .bp4-popover-target.bp4-popover-open > .bp4-menu-item,
+.bp4-submenu .bp4-popover-target.bp4-popover-open>.bp4-menu-item,
 .SettingsSelector:hover button,
 .SettingsSelector:hover .CurrentValue,
 .SettingsButton:hover button,
@@ -644,6 +655,7 @@ div.group-image-wrapper div.group-image-edit-button {
 .SettingsIconButton:hover button {
   color: white !important;
 }
+
 .SettingsIconButton:hover .Icon {
   background-color: white;
 }

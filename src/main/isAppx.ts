@@ -32,6 +32,6 @@ export async function findOutIfWeAreRunningAsAppx() {
 export function getAppxPath(app_folder: string) {
   return join(
     app_folder,
-    '../Packages/merlinux.DeltaChat_v2ry5hvxhdhyy/LocalCache/Local/DeltaChat'
+    '../Packages/merlinux.TuronChat_v2ry5hvxhdhyy/LocalCache/Local/TuronChat'
   )
 }

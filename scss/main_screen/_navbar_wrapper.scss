@@ -1,7 +1,7 @@
 .navbar-wrapper {
   .bp4-navbar {
     padding: 0px;
-    background-color: var(--navBarBackground);
+    background-color: #30408d;
     color: var(--navBarText);
     border-bottom: var(--outlineProperties);
   }
@@ -26,11 +26,11 @@
     float: none;
   }
 
-  .bp4-icon > svg:not([fill]) {
+  .bp4-icon>svg:not([fill]) {
     fill: var(--navBarText);
   }
 
-  .icon-rotated > .bp4-icon > svg:not([fill]) {
+  .icon-rotated>.bp4-icon>svg:not([fill]) {
     transform: rotate(90deg);
   }
 
@@ -39,7 +39,7 @@
   }
 
   input {
-    background-color: var(--navBarBackground);
+    background-color: #30408d;
     -webkit-box-shadow: none;
     box-shadow: none;
     border: unset;

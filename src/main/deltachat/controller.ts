@@ -50,7 +50,7 @@ export default class DeltaChatController extends EventEmitter {
     log.debug('Initiating DeltaChatNode')
     this._inner_account_manager = new DeltaChatNode(
       this.cwd,
-      'deltachat-desktop'
+      'turonchat-desktop'
     )
 
     this.account_manager.startJsonRpcHandler(response => {

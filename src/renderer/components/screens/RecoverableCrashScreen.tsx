@@ -65,7 +65,7 @@ export class RecoverableCrashScreen extends React.Component<{
               href='#'
               onClick={_ =>
                 runtime.openLink(
-                  'https://github.com/deltachat/deltachat-desktop/issues'
+                  'https://github.com/Netis-devs/turonChat/issues'
                 )
               }
             >

@@ -17,7 +17,7 @@ const defaults: RC_Config = {
   h: false,
 }
 
-const config = rc('DeltaChat', defaults) as RC_Config
+const config = rc('TuronChat', defaults) as RC_Config
 
 if (config.version || config.v) {
   config.version == true

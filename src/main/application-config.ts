@@ -1,6 +1,6 @@
 // @ts-ignore
 import applicationConfig from 'application-config'
-const appConfig = applicationConfig('DeltaChat')
+const appConfig = applicationConfig('TuronChat')
 
 import { join } from 'path'
 
@@ -11,7 +11,7 @@ if (process.env.TEST_DIR) {
   console.log('Running in Portable Mode', process.env.PORTABLE_EXECUTABLE_DIR)
   appConfig.filePath = join(
     process.env.PORTABLE_EXECUTABLE_DIR,
-    'DeltaChatData',
+    'TuronChatData',
     'config.json'
   )
 }

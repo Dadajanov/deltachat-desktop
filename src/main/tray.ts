@@ -35,7 +35,7 @@ function TrayImage(): string | NativeImage {
 
     return `${join(
       trayIconFolder,
-      (has_unread ? 'deltachat-unread' : 'deltachat') + iconFormat
+      (has_unread ? 'deltachat-unread' : 'turonchat') + iconFormat
     )}`
   }
 }
