@@ -5,11 +5,13 @@ const { join } = require('path')
 
 function gatherProcessStdout(cmd, args) {
   const { status, stdout, stderr } = spawnSync(cmd, args)
+  console.log({ status, stdout, stderr });
   if (status !== 0) throw new Error(stderr)
   return stdout.toString().replace(/\n/g, '')
 }
 
 async function getGitRef() {
+  console.log({ enc: process.env });
   if (process.env.VERSION_INFO_GIT_REF) {
     return process.env.VERSION_INFO_GIT_REF
   }
@@ -26,7 +28,7 @@ async function getGitRef() {
       console.log(git_symbolic_ref, git_branch)
     } catch (err) {
       console.log(err)
-      git_branch = 'master'
+      git_branch = 'main'
     }
   } catch (err) {
     console.log(err)
@@ -35,7 +37,7 @@ async function getGitRef() {
   }
 
   const git_ref =
-    git_describe + (git_branch === 'master' ? '' : '-' + git_branch)
+    git_describe + (git_branch === 'main' ? '' : '-' + git_branch)
   return git_ref
 }
 
@@ -55,16 +57,16 @@ gatherBuildInfo().then(build_info => {
   writeFileSync(
     join(__dirname, '../src/shared/build-info.ts'),
     '/// GENERATED FILE run `npm run build` to refresh\n' +
-      Object.keys(build_info)
-        .map(
-          key =>
-            `export const ${key} = ${JSON.stringify(build_info[key]).replace(
-              /^"|"$/g,
-              "'"
-            )}`
-        )
-        .join('\n') +
-      '\n',
+    Object.keys(build_info)
+      .map(
+        key =>
+          `export const ${key} = ${JSON.stringify(build_info[key]).replace(
+            /^"|"$/g,
+            "'"
+          )}`
+      )
+      .join('\n') +
+    '\n',
     'utf-8'
   )
 })

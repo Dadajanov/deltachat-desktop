@@ -61,7 +61,7 @@ async function showNotification(
     runtime.showNotification({
       title: appName,
       body: tx('notify_new_message'),
-      icon: '../../../images/TuronTelecomIcon.svg',
+      icon: '../../../images/turonchat.svg',
       chatId,
       messageId,
       accountId,

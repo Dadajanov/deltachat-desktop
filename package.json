@@ -1,7 +1,7 @@
 {
   "name": "turonchat-desktop",
   "version": "1.34.1",
-  "description": "Desktop Application for delta.chat",
+  "description": "Desktop Application for turon.chat",
   "main": "index.js",
   "scripts": {
     "preinstall": "node ./bin/check-nodejs-version.js",
@@ -55,7 +55,7 @@
     "url": "git+ssh://git@github.com/deltachat/deltachat-desktop.git"
   },
   "keywords": [
-    "deltachat",
+    "turonChat",
     "email",
     "messaging",
     "desktop"
